@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global styles */
+@font-face {
+  font-family: "CascadiaMono";
+  font-weight: normal;
+  src: url(/fonts/CascadiaMono.woff2) format("woff2");
+}
+
+@layer base {
+  html {
+    @apply w-screen h-screen;
+  }
+}
+
+@layer components {
+  .bg-darken {
+    @apply bg-[#222426];
+  }
+
+  .source-item .source-codes {
+    @apply pl-4 relative;
+  }
+
+  .source-item-active {
+    @apply bg-blue-800 text-gray-300;
+  }
+
+  .source-item .source-codes:before {
+    content: "";
+    @apply absolute top-0 bottom-0 border-l border-dotted border-stone-500;
+  }
+
+  .inp {
+    @apply block w-full rounded-md outline-none shadow-sm text-xs bg-primary;
+    @apply text-gray-200;
+    @apply px-2 py-0.5;
+  }
+
+  #titlebar {
+    @apply flex items-center justify-between text-gray-300 pl-2 bg-[#1c1c1c];
+    @apply fixed top-0 left-0 right-0;
+    @apply rounded-t-md overflow-hidden;
+  }
+
+  .titlebar-actions {
+    @apply flex items-center;
+  }
+
+  .titlebar-icon {
+    @apply py-0.5 cursor-pointer w-[30px] text-center;
+  }
+
+  .titlebar-icon:hover {
+    @apply bg-[#383838];
+  }
+
+  #ttb-close:hover {
+    @apply bg-red-500 text-gray-100;
+  }
+
+  #editor {
+    @apply pt-[27px] bg-primary rounded-md;
+  }
+
+  .project-explorer {
+    @apply rounded-3xl border border-cyan-500 capitalize text-gray-400 text-xs px-1;
+  }
+
+  .project-name {
+    @apply whitespace-nowrap overflow-hidden text-ellipsis text-gray-400 text-xs;
+  }
+
+  .code-structure {
+    @apply h-[calc(100vh-70px)] text-xs px-2 overflow-y-auto;
+  }
+}
+
+/* Styles for scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222426;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #465056;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Webkit scrollbar CSS: siempre un cuadro blanco en la esquina */
+/* https://stackoverflow.com/questions/35968553/webkit-scrollbar-css-always-a-white-box-in-corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
